@@ -1,10 +1,16 @@
 ﻿using System;
+using System.IO;
 
-namespace class_generator {
+namespace DapperKata.ClassGenerator {
     static class Program {
+
         static void Main(string[] args) {
 
-            Console.WriteLine("Hello World!");
+            var conString = DBServerSetup.GetConnectionDetails();
+            
+            Console.WriteLine(conString.ConnectionString);
         }
+
+        
     }
 }
