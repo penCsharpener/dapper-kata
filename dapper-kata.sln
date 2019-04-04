@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dapper-kata", "dapper-kata\dapper-kata.csproj", "{96AF8A28-6A7B-41A1-A60D-D9F41EDD2597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "class-generator", "class-generator\class-generator.csproj", "{85E7CF70-A6CD-43A7-8CB2-F1038E165375}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96AF8A28-6A7B-41A1-A60D-D9F41EDD2597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96AF8A28-6A7B-41A1-A60D-D9F41EDD2597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96AF8A28-6A7B-41A1-A60D-D9F41EDD2597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96AF8A28-6A7B-41A1-A60D-D9F41EDD2597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E7CF70-A6CD-43A7-8CB2-F1038E165375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E7CF70-A6CD-43A7-8CB2-F1038E165375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E7CF70-A6CD-43A7-8CB2-F1038E165375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E7CF70-A6CD-43A7-8CB2-F1038E165375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F61B2DC5-B7A3-4171-B9D3-EFC0B873BB45}
+	EndGlobalSection
+EndGlobal
