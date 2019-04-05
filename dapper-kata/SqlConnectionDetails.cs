@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DapperKata {
-    public class MySqlConnectionDetails {
+    public class SqlConnectionDetails {
 
-        public MySqlConnectionDetails(string server, string user, string password, ushort port, string database) {
+        public SqlConnectionDetails(string server, string user, string password, ushort port, string database) {
             Server = server;
             User = user;
             Password = password;
