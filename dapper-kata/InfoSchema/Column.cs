@@ -1,11 +1,24 @@
-﻿using Dapper.FluentMap.Mapping;
+﻿using Dapper.FluentMap;
+using Dapper.FluentMap.Mapping;
+using SqlKata.Compilers;
+using SqlKata.Execution;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DapperKata.InfoSchema {
 #nullable disable
-    public class Column {
+    public class Column : DbBase {
+
+        public const string __SchemaName = "information_schema";
+        public const string __TableName = "COLUMNS";
+        private static bool mapped;
+
+        public Column() { }
+
+        public Column(DataConnection connection) : base(connection) { }
+
         public string TableCatalog { get; set; }
         public string TableSchema { get; set; }
         public string TableName { get; set; }
@@ -28,6 +41,23 @@ namespace DapperKata.InfoSchema {
         public string ColumnComment { get; set; }
         public string IsGenerated { get; set; }
         public string GenerationExpression { get; set; }
+
+        public static async Task<IEnumerable<Column>> GetList(DataConnection Db,
+                                                string[] databaseNames = null,
+                                                string[] tableNames = null) {
+
+            if (!mapped) {
+                FluentMapper.Initialize(config => config.AddMap(new ColumnMap()));
+                mapped = true;
+            }
+
+            var compiler = new MySqlCompiler();
+            var qf = new QueryFactory(Db.Con, compiler);
+            return await qf.Query($"{__SchemaName}.{__TableName}")
+                .WhereIn("TABLE_SCHEMA", databaseNames)
+                .WhereIn("TABLE_NAME", tableNames)
+                .GetAsync<Column>();
+        }
     }
 
     public class ColumnMap : EntityMap<Column> {
